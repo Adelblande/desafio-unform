@@ -2,10 +2,11 @@ import React from 'react'
 import { Form, Input } from "@rocketseat/unform"
 
 // import { Container } from './styles';
+import api from '../../services/api'
 
 const Create = () => {
-    function handleSubmit(data) {
-        console.log(data)
+    async function handleSubmit(data) {
+        await api.post('/contato', data)
     }
     return (
         <Form onSubmit={handleSubmit}>

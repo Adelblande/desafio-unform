@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import api from '../../services/api';
 
+
 const Read = () => {
   const [contacts, setContacts] = useState()
 
@@ -28,7 +29,6 @@ const Read = () => {
         ))
       }
     </Container>
-  
   )
 };
 

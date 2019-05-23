@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Input } from "@rocketseat/unform"
+import { Row, Col, Button } from 'react-bootstrap'
 
 // import { Container } from './styles';
 import api from '../../services/api'
@@ -9,12 +10,16 @@ const Create = () => {
         await api.post('/contato', data)
     }
     return (
-        <Form onSubmit={handleSubmit}>
-            <Input name="nome" />
-            <Input name="telefone" />
-            <Input name="email" />
-            <button type="submit">Enviar</button>
-        </Form>
+        <Row className="justify-content-sm-center">
+            <Col sm>
+                <Form onSubmit={handleSubmit} >
+                    <Input name="nome" placeholder="Nome" />
+                    <Input name="telefone" placeholder="Telefone"  />
+                    <Input name="email" placeholder="E-mail"  />
+                    <Button variant="outline-primary" type="submit" block>Enviar</Button>
+                </Form>
+            </Col>
+        </Row>
     )
 }
 export default Create;

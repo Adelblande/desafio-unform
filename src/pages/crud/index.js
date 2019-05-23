@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { MdAddCircle } from 'react-icons/md';
+
+import { Container } from 'react-bootstrap';
 import Read from '../../components/read';
+// import { Form, Input } from "@rocketseat/unform"
 
 // import { Container } from './styles';
 
-const Crud = () => (
-  <>
-    <h1>CRUD</h1>  
-    <Link to="/create"><MdAddCircle size="50px" color="#a939fd"/></Link> 
+const Crud = () => {
+  return (
+  <Container>
     <Read />
-  </>
-);
+  </Container>
+)};
 
 export default Crud;

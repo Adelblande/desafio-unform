@@ -40,7 +40,7 @@ const Read = () => {
           </Col>  
           <Col>  
             <Link to="/create">
-              <MdAdd size="40px" color="#CCC" />
+              <MdAdd size="40px" color="#CCC" title="Add Contato" />
             </Link> 
           </Col>  
         </Row>
@@ -49,7 +49,7 @@ const Read = () => {
       {
         contactsFiltered && contactsFiltered.map(contact => (
           <Row key={contact._id} className="justify-content-xs-center">
-            <Col sm={3}>{ contact.nome }</Col>
+            <Col sm={12}>{ contact.nome }</Col>
           </Row>
         ))
       }

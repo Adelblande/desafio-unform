@@ -1,17 +1,13 @@
 import React from 'react';
 
-import { Container } from 'react-bootstrap';
 import Read from '../../components/read';
 // import { Form, Input } from "@rocketseat/unform"
 
 // import { Container } from './styles';
 
-const Crud = () => {
+const Crud = (props) => {
   return (
-  <Container>
-    <h2>Contatos</h2>  
-    <Read />
-  </Container>
+    <Read props={props} />
 )};
 
 export default Crud;

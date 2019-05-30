@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Row, Col } from 'react-bootstrap';
+
 import { MdAdd } from 'react-icons/md';
 
 import api from '../../services/api';
+import './styles.css';
 
-
-const Read = () => {
+const Read = ({props}) => {
   const [contacts, setContacts] = useState()
   const [contactsFiltered, setContactsFiltered] = useState()
 
@@ -25,35 +25,29 @@ const Read = () => {
     setContactsFiltered([...filtered])
   }
   
-  // async function excluiContato(data) {
-  //   await api.delete(`/contato/${data}`)
-  // }
-
+  async function editContact(data) {
+    props.history.push(`/edit/${data._id}`)
+  }
+  
   return (
-    <>
-      <Form>
-        <Row>
-          <Col sm={4}>  
-            <Form.Group>
-              <Form.Control name="searchContact" placeholder="Pesquisar Contato" onKeyUp={e => searchContact(e.target.value)}/>
-            </Form.Group>
-          </Col>  
-          <Col>  
-            <Link to="/create">
-              <MdAdd size="40px" color="#CCC" title="Add Contato" />
-            </Link> 
-          </Col>  
-        </Row>
-      </Form>
-      
+    <div id="divContainer">
+      <h2>Contatos</h2>
+      <form>
+        <input name="searchContact" placeholder="Pesquisar Contato" onKeyUp={e => searchContact(e.target.value)}/>
+        <Link to="/create">
+          <MdAdd size="40px" color="#CCC" title="Add Contato" />
+        </Link> 
+      </form>
+      <ul>
       {
         contactsFiltered && contactsFiltered.map(contact => (
-          <Row key={contact._id} className="justify-content-xs-center">
-            <Col sm={12}>{ contact.nome }</Col>
-          </Row>
+          <li key={contact._id} className="justify-content-xs-center " onClick={() => editContact(contact)}>
+            { contact.nome }
+          </li>
         ))
       }
-    </>
+      </ul>
+    </div>
   )
 };
 

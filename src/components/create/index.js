@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Input } from "@rocketseat/unform"
-// import { Row, Col, Button } from 'react-bootstrap'
 
 import './styles.css';
 import api from '../../services/api'

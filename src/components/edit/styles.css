@@ -1,0 +1,73 @@
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+} */
+
+/* body, html {
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  height: 100%;
+  width: 100%;
+} */
+
+#divUnformEdit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#divUnformEdit h2 {
+  color: #CCC;
+}
+
+#divUnformEdit input {
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  margin: 5px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 0 20px
+}
+
+#divUnformEdit button {
+  height: 45px;
+  width: 100%;
+  margin: 5px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #124915;
+  color: #FFF;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#divUnformEdit button:hover {
+  opacity: 0.8;
+}
+
+#divUnformEdit header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 200px;
+  width: 100%;
+  margin: 5px;
+  border: 0;
+  border-radius: 5px;
+  background-image: linear-gradient(#124915, #000)
+}
+
+.img-link {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.hide {
+  display: none;
+}
